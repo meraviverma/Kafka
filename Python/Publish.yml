@@ -1,0 +1,37 @@
+brc_data_publish:
+    kafka_config:
+        sf_publish:
+            config:
+                key: mdp_id
+                payload_table: payload_pub
+                authentication:
+                    truststore_key:
+                        option: kafka.ss.truststore.password
+                        dbutils_scope: mdpkeyvault
+                        dbutils_key: kafka-truststore
+                    keystore_key:
+                        option: kafka.ss.keystore.password
+                        dbutils_scope: mdpkeyvault
+                        dbutils_key: rms-sf-kafka-keystore_key
+                spark_write:
+                        kafka.group.id: nonprod
+                        topic: abc
+                        kafka.bootstrap.server:
+                        kafka.security.protocol: SSL
+                        kafka.ssl.keystore.type: JKS
+                        kafka.ssl.truststore.type: JKS
+                        kafka.ss.keystore.location: /xyx/certificate/keystore.jks
+                        kafka.ss.truststore.type: JKS
+                        kafka.ssl.truststore.location: /xyx/certificate/truststore.jks
+                        kafka.group.id:
+                        kafka.client.id:
+    db_config:
+        configs:
+            sf_payload_table: 
+            sf_payload_path:
+            table:
+            table_path:
+            delta_table:
+            delta_path:
+            container:
+                        
